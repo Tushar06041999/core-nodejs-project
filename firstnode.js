@@ -6,11 +6,11 @@
 // }).listen(8080);
 
 
-//path Declearation
+// //path Declearation
 
 
-const path =require("path");
-const pathName="C:/web <devlopment /nodejs folder/first node js/firstnode.js" ;
+// const path =require("path");
+// const pathName="C:/web <devlopment /nodejs folder/first node js/firstnode.js" ;
 
 // console.log(path.basename(pathName));  //path Base Name Declicartion
 // console.log(path.dirname(pathName));   //Dire4ctory Name
@@ -19,14 +19,27 @@ const pathName="C:/web <devlopment /nodejs folder/first node js/firstnode.js" ;
 // console.log(path.delimiter);
 // console.log(path.resolve(pathName));
 
-//os method Explore
+// os method Explore
 
-const os=require("os");
-console.log(os.platform());
-console.log(os.version());
-console.log(os.hostname());
-console.log(os.loadavg());
-console.log(os.homedir());
-console.log(os.release());
-console.log(os.freemem());
-console.log(os.cpus());
+// const os=require("os");
+// console.log(os.platform());
+// console.log(os.version());
+// console.log(os.hostname());
+// console.log(os.loadavg());
+// console.log(os.homedir());
+// console.log(os.release());
+// console.log(os.freemem());
+// console.log(os.cpus());
+
+
+//fs File system Mangement Ecxplore
+
+const fs=require("fs");
+fs.writeFileSync("firstfs.txt","Hello programmers ");
+fs.appendFileSync("firstfs.txt","How are you guys");
+const data=fs.readFileSync("firstfs.txt");
+console.log(data.toString());
+
+fs.readFile("firstfs.txt",(error,data)=>{
+    console.log(data.toString());
+})
