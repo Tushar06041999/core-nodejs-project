@@ -6,20 +6,11 @@
 // }).listen(8080);
 
 
-// //path Declearation
 
 
 // const path =require("path");
 // const pathName="C:/web <devlopment /nodejs folder/first node js/firstnode.js" ;
 
-// console.log(path.basename(pathName));  //path Base Name Declicartion
-// console.log(path.dirname(pathName));   //Dire4ctory Name
-// console.log(path.extname(pathName));   //Extension Name
-// console.log(path.parse(pathName));    //It's show object
-// console.log(path.delimiter);
-// console.log(path.resolve(pathName));
-
-// os method Explore
 
 // const os=require("os");
 // console.log(os.platform());
@@ -32,14 +23,39 @@
 // console.log(os.cpus());
 
 
-//fs File system Mangement Ecxplore
 
-const fs=require("fs");
-fs.writeFileSync("firstfs.txt","Hello programmers ");
-fs.appendFileSync("firstfs.txt","How are you guys");
-const data=fs.readFileSync("firstfs.txt");
-console.log(data.toString());
 
-fs.readFile("firstfs.txt",(error,data)=>{
-    console.log(data.toString());
-})
+// const fs=require("fs");
+// fs.writeFileSync("firstfs.txt","Hello programmers ");
+// fs.appendFileSync("firstfs.txt","How are you guys");
+// const data=fs.readFileSync("firstfs.txt");
+// console.log(data.toString());
+
+// fs.readFile("firstfs.txt",(error,data)=>{
+//     console.log(data.toString());
+// })
+
+
+
+//Http create and server model
+const http =require("http");
+
+const server=http.createServer((req,res) =>{
+
+  if(req.url === "/"){
+    res.write("Hello Progrmmers.....");
+    res.end();
+
+  }else if(req.url==="/about"){
+    res.write("This is actually Tushar chandra Mohanto's about section");
+    res.end();
+  }else{
+    res.write("Page Not Found");
+    res.end();
+  }
+ 
+});
+
+server.listen(3000);
+
+console.log("We create this server that's open in port 3000");
