@@ -38,24 +38,33 @@
 
 
 //Http create and server model
-const http =require("http");
+// const http =require("http");
 
-const server=http.createServer((req,res) =>{
+// const server=http.createServer((req,res) =>{
 
-  if(req.url === "/"){
-    res.write("Hello Progrmmers.....");
-    res.end();
+//   if(req.url === "/"){
+//     res.write("Hello Progrmmers.....");
+//     res.end();
 
-  }else if(req.url==="/about"){
-    res.write("This is actually Tushar chandra Mohanto's about section");
-    res.end();
-  }else{
-    res.write("Page Not Found");
-    res.end();
-  }
+//   }else if(req.url==="/https://www.facebook.com/profile.php?id=100074098277923"){
+//     res.write("Aboti Howleder fathers Name Dilip kumer Howlader Mothers Name Banarjee");
+//     res.end();
+//   }else{
+//     res.write("Page Not Found");
+//     res.end();
+//   }
  
+// });
+
+// server.listen(3000);
+
+// console.log("We create this server that's open in port 3000");
+
+//chunk stream buffer method
+
+const fs =require("fs");
+const ourReadStream=fs.createReadStream(`${__dirname}/firstfs.txt`);
+
+ourReadStream.on("data",(chunk)=>{
+  console.log(chunk);
 });
-
-server.listen(3000);
-
-console.log("We create this server that's open in port 3000");
