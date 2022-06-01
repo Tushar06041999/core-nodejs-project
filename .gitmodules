@@ -1,0 +1,3 @@
+[submodule "core-nodejs-project"]
+	path = core-nodejs-project
+	url = https://github.com/Tushar06041999/core-nodejs-project
